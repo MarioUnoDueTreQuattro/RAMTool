@@ -460,19 +460,19 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
 
     public static void updateStatus() {
         // Log.d(TAG, "updateZRAMStatus2()");
-        int diskNum = 0;
+        //int diskNum = 0;
         //if (hasZRAM0() == true) diskNum++;
         //if (hasZRAM1() == true) diskNum++;
         //if (hasZRAM2() == true) diskNum++;
         //if (hasZRAM3() == true) diskNum++;
-        iDiskNum = diskNum;
+        //iDiskNum = diskNum;
         //getSwappiness();
        //getVFSCachePressure();
-        int r1num = 0;
-        int r2num = 0;
-        int r3num = 0;
-        int r4num = 0;
-        int ZRAMSizeTot = 0;
+        //int r1num = 0;
+        //int r2num = 0;
+        //int r3num = 0;
+        //int r4num = 0;
+       // int ZRAMSizeTot = 0;
 /*
         try {
             if (hasZRAM0() == true || hasZRAM0() == false) {
@@ -533,12 +533,12 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         }
 */
         //iZRAMSize = r1num;
-        iZRAMComprDataSize = r4num;
-        iZRAMTotalMemoryUsed = r2num;
+        //iZRAMComprDataSize = r4num;
+        //iZRAMTotalMemoryUsed = r2num;
         //int iMemory[] = new int[5];
         //iMemory = getMemoryInfo();
-        iZRAMUsage = r3num;
-        if (iZRAMUsage > iZRAMMaximumUsage) iZRAMMaximumUsage = iZRAMUsage;
+        //iZRAMUsage = r3num;
+        //if (iZRAMUsage > iZRAMMaximumUsage) iZRAMMaximumUsage = iZRAMUsage;
         //if (r3num > iMaximumZRAMUsage) iMaximumZRAMUsage = r3num;
         String str1 = "/proc/meminfo";
         String str2;
