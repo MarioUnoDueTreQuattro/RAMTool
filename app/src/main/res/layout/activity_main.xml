@@ -1,0 +1,206 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity"
+                android:id="@+id/scrollView"
+                android:background="@android:color/black">
+     <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:padding="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="@string/ZRAM_status"
+            android:id="@+id/textViewStatus"
+            android:textColor="@android:color/primary_text_dark"
+            android:paddingBottom="10dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewDiskNum"
+            android:id="@+id/textViewDiskNum"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewTotalSize"
+            android:id="@+id/textViewTotalSize"
+            android:textColor="@android:color/secondary_text_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewTotalMemoryUsed"
+            android:id="@+id/textViewTotalMemoryUsed"
+            android:textColor="@android:color/secondary_text_dark"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewOrigDataSize"
+            android:id="@+id/textViewOrigDataSize"
+            android:textColor="@android:color/secondary_text_dark"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewComprDataSize"
+            android:id="@+id/textViewComprDataSize"
+            android:textColor="@android:color/secondary_text_dark"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="maximumZRAM"
+            android:id="@+id/textViewMaxZRAMUsage"
+            android:textColor="@android:color/secondary_text_dark"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewSwappiness"
+            android:id="@+id/textViewSwappiness"
+            android:textColor="@android:color/secondary_text_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewVFS_cache_pressure"
+            android:id="@+id/textViewVFS_cache_pressure"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="@string/RAM_Status"
+            android:id="@+id/textViewRAMStatus"
+            android:textColor="@android:color/primary_text_dark"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewFreeRam"
+            android:id="@+id/textViewFreeRam"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewCached"
+            android:id="@+id/textViewCached"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewBuffers"
+            android:id="@+id/textViewBuffers"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewTotalFree"
+            android:id="@+id/textViewTotalFree"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewMinFreeRAM"
+            android:id="@+id/textViewMinFreeRAM"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewMaxFreeRAM"
+            android:id="@+id/textViewMaxFreeRAM"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small"
+            android:text="textViewTotal"
+            android:id="@+id/textViewTotal"
+            android:textColor="@android:color/secondary_text_dark"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/CleanMemory"
+                android:id="@+id/buttonCleanMemory"
+                android:layout_weight="1"/>
+
+            <Button
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/CleanDropCache"
+                android:id="@+id/buttonCleanDropCache"
+                android:layout_weight="1"/>
+
+            <Button
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/CleanAll"
+                android:id="@+id/buttonCleanAll"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+            <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarTheme">@style/MyActionBar</item>
+    </style>
+    <style name="Black" parent="Theme.AppCompat">
+        <item name="android:background">@android:color/black</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="actionOverflowButtonStyle">@style/Widget.AppCompat.ActionButton.Overflow</item>
+        <item name="actionOverflowMenuStyle">@style/Widget.AppCompat.PopupMenu.Overflow</item>
+        <item name="actionBarStyle">@style/Widget.AppCompat.ActionBar</item>
+        <item name="actionBarSplitStyle">?attr/actionBarStyle</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionBarTheme">@style/MyActionBar</item>
+        <item name="actionBarSize">@dimen/abc_action_bar_default_height_material</item>
+        <item name="actionBarDivider">?attr/dividerVertical</item>
+        <item name="actionBarItemBackground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBar</item>
+        <item name="actionMenuTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Menu</item>
+        <item name="actionMenuTextColor">?android:attr/textColorPrimaryDisableOnly</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+
+    </style>
+    <style name="ButtonTheme" parent="Theme.AppCompat">
+
+    </style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar" >
+
+        <item name="android:background">#ff222222</item>
+        <item name="android:textColor">#ffdddddd</item>
+        <item name="android:textSize">16sp</item>
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+        <item name="android:iconPreview">@mipmap/ic_launcher</item>
+
+    </style>
+
+    <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffdddddd</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BigButtonTheme" parent="Theme.AppCompat">
+        <!--<item name="android:background">#ff101010</item>-->
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

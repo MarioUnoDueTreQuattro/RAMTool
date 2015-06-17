@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name" translatable="false">RAMTool</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_configure_zram">Configure ZRAM</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_log">Show log</string>
+    <string name="ZRAM_status">ZRAM</string>
+    <string name="ZRAM_settings">ZRAM settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_main" translatable="false">RAM Tool</string>
+    <string name="ZRAM_size">"Total size of disks: "</string>
+    <string name="ZRAM_total">"Total memory used: "</string>
+    <string name="ZRAM_original">"Original data size: "</string>
+    <string name="ZRAM_compressed">"Compressed data size: "</string>
+    <string name="RAM_Tools">RAM tools</string>
+    <string name="disableZRAM">Disable ZRAM</string>
+    <string name="enableZRAM">Set ZRAM</string>
+    <string name="ZRAM_disk_number">"Disks: "</string>
+    <string name="title_activity_enable__zram_">Enable/Disable ZRAM</string>
+    <string name="CleanMemory">Clean memory</string>
+    <string name="CleanDropCache">Clean Drop Cache</string>
+    <string name="CleanAll">Clean all</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_NotificationView" translatable="false">ActivityNotification</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_about">About</string>
+    <string name="action_changelog">Change log</string>
+    <string name="title_changelog" translatable="false">RAM Tool</string>
+    <string name="changelog_close">Close</string>
+    <string name="enable_disable_zram">Enable/Disable ZRAM:</string>
+    <string name="changelog">Changelog...</string>
+    <string name="close">Close</string>
+    <string name="apply">Apply</string>
+    <string name="problem_reading_kernel_version">Problem reading kernel version file.</string>
+    <string name="could_not_load_change_log">Could not load change log</string>
+    <string name="ZRAM_enabled">ZRAM enabled.</string>
+    <string name="Disabling_ZRAM">Disabling ZRAM...</string>
+    <string name="ZRAM_disabled">ZRAM disabled.</string>
+    <string name="Tap_back_button">Tap back button twice to hide.\nUse Exit button to exit.</string>
+    <string name="Use_Exit_button_to_exit">Use Exit button to exit.</string>
+    <string name="Memory_and_Drop_Cache_cleaned">"Memory and Drop Cache cleaned... "</string>
+    <string name="Memory_cleaned">"Memory cleaned... "</string>
+    <string name="Launched_RAMTool_background_service">Launched RAMTool background service to update notification...</string>
+    <string name="Maximum_ZRAM_usage">"Maximum ZRAM usage: "</string>
+    <string name="Total_size_all_disks">"Total size (all disks): "</string>
+    <string name="free_memory">"Free memory: "</string>
+    <string name="Total_free_memory">"Total free memory: "</string>
+    <string name="Total_memory">"Total memory: "</string>
+    <string name="Total_Free">"Total Free: "</string>
+    <string name="Free">"Free: "</string>
+    <string name="ZRAM_used">"ZRAM used: "</string>
+    <string name="_Max_ZRAM" translatable="false">" - Max ZRAM: "</string>
+    <string name="_Free">" - Free: "</string>
+    <string name="_Cached" translatable="false">" - Cache: "</string>
+    <string name="_Buffers" translatable="false">" - Buffers: "</string>
+    <string name="Minimum_free_memory">"Minimum free memory: "</string>
+    <string name="Maximum_free_memory">"Maximum free memory: "</string>
+    <string name="RAM_Status">RAM</string>
+    <string name="programming_version_info">"Programming: ThePriest\n\nVersion: "</string>
+    <string name="kernel_version">"\n\nKernel version: "</string>
+    <string name="title_activity_log_">Log</string>
+    <string name="clear_log">Clear</string>
+    <string name="update_log">Update</string>
+    <string name="log_disabled">Log disabled.\n</string>
+    <string name="log_enabled">Log enabled.\n</string>
+    <string name="version_code">"\n\nVersion code: "</string>
+    <string name="drop_cache_cleaned">"Drop Cache cleaned... "</string>
+
+</resources>

@@ -1,0 +1,97 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        <CheckBoxPreference
+            android:key="example_checkbox"
+            android:title="@string/pref_title_social_recommendations"
+            android:summary="@string/pref_description_social_recommendations"
+            android:defaultValue="true" />
+
+        &lt;!&ndash; NOTE: EditTextPreference accepts EditText attributes. &ndash;&gt;
+        &lt;!&ndash; NOTE: EditTextPreference's summary should be set to its value by the activity code. &ndash;&gt;
+        <EditTextPreference
+            android:key="example_text"
+            android:title="@string/pref_title_display_name"
+            android:defaultValue="@string/pref_default_display_name"
+            android:selectAllOnFocus="true"
+            android:inputType="textCapWords"
+            android:capitalize="words"
+            android:singleLine="true"
+            android:maxLines="1" />
+    -->
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="enable_notification"
+        android:title="@string/pref_title_enable_notification"/>
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:dependency="enable_notification"
+        android:key="enable_advanced_notification"
+        android:title="@string/pref_title_enable_advanced_notification"/>
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:dependency="enable_notification"
+        android:key="enable_auto_drop_cache"
+        android:title="@string/pref_title_enable_auto_drop_cache"/>
+
+    <EditTextPreference
+        android:numeric="integer"
+        android:dependency="enable_auto_drop_cache"
+        android:key="memory_limit_to_drop_cache"
+        android:title="@string/title_edittext_MemoryLimitToDropCache"
+        android:summary="@string/summary_edittext_MemoryLimitToDropCache"
+        android:dialogTitle="@string/dialog_title_MemoryLimitToDropCache" />
+
+    <EditTextPreference
+        android:numeric="integer"
+        android:dependency="enable_auto_drop_cache"
+        android:key="process_limit"
+        android:title="@string/title_edittext_process_limit"
+        android:summary="@string/summary_edittext_process_limit"
+        android:dialogTitle="@string/dialog_title_process_limit" />
+
+    <ListPreference
+        android:defaultValue="5"
+        android:entries="@array/pref_refresh_frequency_titles"
+        android:entryValues="@array/pref_refresh_frequency_values"
+        android:key="refresh_frequency"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_refresh_frequency"/>
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="double_back_to_exit"
+        android:title="@string/pref_title_double_back_to_exit"/>
+
+    <ListPreference
+        android:defaultValue="-1"
+        android:entries="@array/pref_ZRAM_directory_list_titles"
+        android:entryValues="@array/pref_ZRAM_directory_list_values"
+        android:key="pref_ZRAM_directory"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_ZRAM_directory"/>
+
+    <ListPreference
+        android:defaultValue="en"
+        android:entries="@array/pref_language_titles"
+        android:entryValues="@array/pref_language_values"
+        android:key="language"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_language"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="enable_log"
+        android:title="@string/pref_title_enable_log"/>
+
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+       dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+
+</PreferenceScreen>
