@@ -17,6 +17,13 @@
         android:title="@string/action_configure_zram"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/action_log"
+        style="@style/BigButtonTheme"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:orderInCategory="100"
+        android:title="@string/action_log"
+        app:showAsAction="always"/>
+    <item
         android:id="@+id/action_settings"
         style="@style/BigButtonTheme"
         android:icon="@android:drawable/ic_menu_preferences"
@@ -30,10 +37,5 @@
         android:orderInCategory="100"
         android:title="@string/action_exit"
         app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/action_log"
-        style="@style/BigButtonTheme"
-        android:orderInCategory="100"
-        android:title="@string/action_log"
-        app:showAsAction="always"/>
+
 </menu>

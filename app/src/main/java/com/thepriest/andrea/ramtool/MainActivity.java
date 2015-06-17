@@ -169,14 +169,14 @@ public class MainActivity extends AppCompatActivity {
         textViewCached = (TextView) findViewById(R.id.textViewCached);
         textViewTotalFree = (TextView) findViewById(R.id.textViewTotalFree);
         textViewTotal = (TextView) findViewById(R.id.textViewTotal);
-        textViewTotalSize = (TextView) findViewById(R.id.textViewTotalSize);
-        textViewTotalMemoryUsed = (TextView) findViewById(R.id.textViewTotalMemoryUsed);
-        textViewOrigDataSize = (TextView) findViewById(R.id.textViewOrigDataSize);
-        textViewComprDataSize = (TextView) findViewById(R.id.textViewComprDataSize);
-        textViewSwappiness = (TextView) findViewById(R.id.textViewSwappiness);
-        textViewDiskNum = (TextView) findViewById(R.id.textViewDiskNum);
-        textViewVFS_cache_pressure = (TextView) findViewById(R.id.textViewVFS_cache_pressure);
-        textViewMaxZRAMUsage = (TextView) findViewById(R.id.textViewMaxZRAMUsage);
+        //textViewTotalSize = (TextView) findViewById(R.id.textViewTotalSize);
+        //textViewTotalMemoryUsed = (TextView) findViewById(R.id.textViewTotalMemoryUsed);
+        //textViewOrigDataSize = (TextView) findViewById(R.id.textViewOrigDataSize);
+        //textViewComprDataSize = (TextView) findViewById(R.id.textViewComprDataSize);
+        //textViewSwappiness = (TextView) findViewById(R.id.textViewSwappiness);
+        //textViewDiskNum = (TextView) findViewById(R.id.textViewDiskNum);
+        //textViewVFS_cache_pressure = (TextView) findViewById(R.id.textViewVFS_cache_pressure);
+        //textViewMaxZRAMUsage = (TextView) findViewById(R.id.textViewMaxZRAMUsage);
         textViewMinFreeRAM = (TextView) findViewById(R.id.textViewMinFreeRAM);
         textViewMaxFreeRAM = (TextView) findViewById(R.id.textViewMaxFreeRAM);
 /*
@@ -685,8 +685,8 @@ int freeMemBefore = getMemoryUsage();
 //        if (hasZRAM1() == true) diskNum++;
 //        if (hasZRAM2() == true) diskNum++;
 //        if (hasZRAM3() == true) diskNum++;
-        iDiskNum = RAMToolApp.iDiskNum;
-        textViewDiskNum.setText(getString(R.string.ZRAM_disk_number) + iDiskNum);
+   //     iDiskNum = RAMToolApp.iDiskNum;
+//        textViewDiskNum.setText(getString(R.string.ZRAM_disk_number) + iDiskNum);
 /*        try {
             BufferedReader mounts = new BufferedReader(new FileReader("/proc/sys/vm/swappiness"));
             String line;
@@ -718,6 +718,7 @@ int freeMemBefore = getMemoryUsage();
         } catch (NumberFormatException nfe) {
             System.out.println("NumberFormatException: Could not parse " + nfe);
         }*/
+/*
         try {
             iSwappiness = RAMToolApp.iSwappiness;
             textViewSwappiness.setText("Swappiness: " + iSwappiness);
@@ -725,6 +726,7 @@ int freeMemBefore = getMemoryUsage();
         } catch (Resources.NotFoundException exception) {
             exception.printStackTrace();
         }
+*/
         //Shell shell = new Shell();
 /*
         String result1 = "";
@@ -737,11 +739,13 @@ int freeMemBefore = getMemoryUsage();
         int r4num = 0;
 */
 
+/*
         iZRAMSize = RAMToolApp.iZRAMSize;
         textViewTotalSize.setText(getString(R.string.ZRAM_size) + iZRAMSize + " MB");
         textViewTotalMemoryUsed.setText(getString(R.string.ZRAM_total) + RAMToolApp.iZRAMTotalMemoryUsed + " MB");
         textViewOrigDataSize.setText(getString(R.string.ZRAM_original) + RAMToolApp.iZRAMUsage + " MB");
         textViewComprDataSize.setText(getString(R.string.ZRAM_compressed) + RAMToolApp.iZRAMComprDataSize + " MB");
+*/
 //        int iMemory[] = new int[5];
 //        iMemory = getMemoryInfo();
         textViewFreeRam.setText(getString(R.string.free_memory) + RAMToolApp.iFreeMemory + " MB");
@@ -751,9 +755,11 @@ int freeMemBefore = getMemoryUsage();
         textViewMinFreeRAM.setText(getString(R.string.Minimum_free_memory) + RAMToolApp.iMinFreeMemory + " MB");
         textViewMaxFreeRAM.setText(getString(R.string.Maximum_free_memory) + RAMToolApp.iMaxFreeMemory + " MB");
         textViewTotal.setText(getString(R.string.Total_memory) + RAMToolApp.iTotalMemory + " MB");
+/*
         iZRAMUsage = RAMToolApp.iZRAMUsage;
         if (iZRAMUsage > iMaximumZRAMUsage) iMaximumZRAMUsage = iZRAMUsage;
         textViewMaxZRAMUsage.setText(getString(R.string.Maximum_ZRAM_usage) + RAMToolApp.iZRAMMaximumUsage + " MB");
+*/
 /*
         progressBarTotalMemoryUsed.setMax(iZRAMSize);
         progressBarOrigDataSize.setMax(iZRAMSize);
