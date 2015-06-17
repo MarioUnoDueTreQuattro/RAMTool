@@ -461,18 +461,19 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
     public static void updateStatus() {
         // Log.d(TAG, "updateZRAMStatus2()");
         int diskNum = 0;
-        if (hasZRAM0() == true) diskNum++;
-        if (hasZRAM1() == true) diskNum++;
-        if (hasZRAM2() == true) diskNum++;
-        if (hasZRAM3() == true) diskNum++;
+        //if (hasZRAM0() == true) diskNum++;
+        //if (hasZRAM1() == true) diskNum++;
+        //if (hasZRAM2() == true) diskNum++;
+        //if (hasZRAM3() == true) diskNum++;
         iDiskNum = diskNum;
-        getSwappiness();
-        getVFSCachePressure();
+        //getSwappiness();
+       //getVFSCachePressure();
         int r1num = 0;
         int r2num = 0;
         int r3num = 0;
         int r4num = 0;
         int ZRAMSizeTot = 0;
+/*
         try {
             if (hasZRAM0() == true || hasZRAM0() == false) {
                 iZRAMStatus = getZRAMStatus(0);
@@ -530,6 +531,7 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
                 System.out.println("Could not parse " + nfe);
             }
         }
+*/
         //iZRAMSize = r1num;
         iZRAMComprDataSize = r4num;
         iZRAMTotalMemoryUsed = r2num;

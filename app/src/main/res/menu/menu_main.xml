@@ -15,25 +15,25 @@
         android:icon="@android:drawable/ic_menu_edit"
         android:orderInCategory="100"
         android:title="@string/action_configure_zram"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
     <item
         android:id="@+id/action_settings"
         style="@style/BigButtonTheme"
         android:icon="@android:drawable/ic_menu_preferences"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
     <item
         android:id="@+id/action_exit"
         style="@style/BigButtonTheme"
         android:icon="@android:drawable/ic_lock_power_off"
         android:orderInCategory="100"
         android:title="@string/action_exit"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_log"
         style="@style/BigButtonTheme"
         android:orderInCategory="100"
         android:title="@string/action_log"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 </menu>
