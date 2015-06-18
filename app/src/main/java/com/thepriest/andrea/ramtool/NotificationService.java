@@ -313,7 +313,7 @@ public class NotificationService extends Service {
         boolean bProcIsInRecentLimit = true;
         //final  ArrayList<ApplicationInfo> recents = new  ArrayList<ApplicationInfo>();
         if (RAMToolApp.bLog)
-            RAMToolApp.mLogHelper.appendLog("recentCount= " + recentCount + " ..... Process limit= " + RAMToolApp.iProcessLimit, LogHelper.LogColor.RED);
+            RAMToolApp.mLogHelper.appendLog("KILLING: RecentCount= " + recentCount + " ..... ProcessLimit= " + RAMToolApp.iProcessLimit, LogHelper.LogColor.RED);
         if (BuildConfig.DEBUG)
             Log.d(TAG, "recentCount= " + recentCount + " ..... Process limit= " + RAMToolApp.iProcessLimit);
         for (int i = 0; i < procCount; i++) {
