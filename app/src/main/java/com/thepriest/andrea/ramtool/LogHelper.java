@@ -10,11 +10,15 @@ public class LogHelper {
 
     private static final String TAG = LogHelper.class.getSimpleName();
     private static final String sWhiteColor = "<br><font color=\"#FFFFFF\">"; //white
+    //    private static final String sGrayColor = "<br><font size=\"0.7\" color=\"#666666\">"; //gray
+//    private static final String sType1Color = "<br><font size=\"1\" color=\"#FF0000\">"; //red
+//    private static final String sType2Color = "<br><font size=\"0.8\" color=\"#00FF00\">"; //green
+//    private static final String sType3Color = "<br><font size=\"0.7\" color=\"#0099cc\">"; //blue
     private static final String sGrayColor = "<br><font color=\"#666666\">"; //gray
     private static final String sType1Color = "<br><font color=\"#FF0000\">"; //red
     private static final String sType2Color = "<br><font color=\"#00FF00\">"; //green
     private static final String sType3Color = "<br><font color=\"#0099cc\">"; //blue
-    private static final String sClose = "</font><font color=\"#FFEEEE\"></font>";
+    private static final String sClose = "</font>";
     //    public static final int LOG_COLOR_WHITE =0;
 //    public static final int LOG_COLOR_RED =1;
 //    public static final int LOG_COLOR_GREEN =2;
