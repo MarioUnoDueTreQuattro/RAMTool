@@ -330,13 +330,11 @@ public class NotificationService extends Service {
                     bProcIsInRecentLimit = true;
                     //Log.d(TAG, "sRecentPackageName == sProcName NOT killBackgroundProcesses= " + sProcName);
                     if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("NOT KILL " + sProcName, LogHelper.LogColor.GREEN);
-
                 }
             }
             if (bProcIsInRecentLimit == false) {
                 activityManager.killBackgroundProcesses(sProcName);
                 if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog(sProcName, LogHelper.LogColor.BLUE);
-
                 //   Log.d(TAG, "killBackgroundProcesses= " + sProcName);
             } else {
                 //   Log.d(TAG, "NOT killBackgroundProcesses= " + sProcName);
