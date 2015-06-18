@@ -232,7 +232,7 @@ public class NotificationService extends Service {
             // mNotificationManager.cancelAll();
             //mNotificationManager.notify(0, appLaunch.build());
             Notification note = appLaunch.build();
-            startForeground(1337, note);
+            startForeground(1237, note);
         }
     }
 
