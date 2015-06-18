@@ -258,7 +258,7 @@ public class NotificationService extends Service {
                     try {
                         if (RAMToolApp.bShowAdvancedNotification) setNotification2();
                         else setNotification();
-                        if (RAMToolApp.iTotalFreeMemory < RAMToolApp.iMemoryLimitToDropCache && RAMToolApp.bEnableDropCache && iCounter > 5) {
+                        if (RAMToolApp.iTotalFreeMemory < RAMToolApp.iMemoryLimitToDropCache && RAMToolApp.bEnableDropCache && iCounter > 4) {
                             iCounter = 0;
                             cleanMemoryKeepingRecents();
                             cleanDropCache();

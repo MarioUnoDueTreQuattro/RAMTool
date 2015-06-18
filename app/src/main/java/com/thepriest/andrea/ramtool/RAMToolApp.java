@@ -49,7 +49,7 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
     public static String sType2Color = "<br><font color=\"#00FF00\">"; //green
     public static String sType3Color = "<br><font color=\"#0099cc\">"; //blue
     public static String sClose = "</font><font color=\"#FFEEEE\"></font>";
-
+    public static final String sMemInfo = "/proc/meminfo";
 //    holo blue light = 33b5e5 ( rgb: 51, 181, 229 )
 //    holo blue dark = 0099cc ( rgb: 0, 153 204 )
 //    holo blue bright = 00ddff ( rgb: 0, 221, 255 )﻿
@@ -542,12 +542,11 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         //iZRAMUsage = r3num;
         //if (iZRAMUsage > iZRAMMaximumUsage) iZRAMMaximumUsage = iZRAMUsage;
         //if (r3num > iMaximumZRAMUsage) iMaximumZRAMUsage = r3num;
-        String str1 = "/proc/meminfo";
         String str2;
         String[] arrayOfString;
         // int memory[] = new int[5];
         try {
-            FileReader localFileReader = new FileReader(str1);
+            FileReader localFileReader = new FileReader(sMemInfo);
             BufferedReader localBufferedReader = new BufferedReader(localFileReader, 8192);
 /*
             while ((str2 = localBufferedReader.readLine()) != null) {
@@ -574,9 +573,12 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
             localBufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (Exception e) {
+        }
+/*
+         catch (Exception e) {
             e.printStackTrace();
         }
+*/
         iFreeMemory = iMemory[0];
         iCachedMemory = iMemory[2];
         iBuffersMemory = iMemory[1];
