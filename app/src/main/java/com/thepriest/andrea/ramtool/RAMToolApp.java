@@ -114,7 +114,8 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         Log.d(TAG, "process_limit= " + iMemoryLimitToDropCache);
         bLog = prefs.getBoolean("enable_log", false);
         Log.d(TAG, "bLog= " + bLog);
-        if (RAMToolApp.bLog) mLogHelper.appendLog("RAMToolApp::onCreate()", LogHelper.LogColor.GRAY);
+        if (RAMToolApp.bLog)
+            mLogHelper.appendLog("RAMToolApp::onCreate()", LogHelper.LogColor.GRAY);
         /**
          * set language
          */
@@ -156,7 +157,8 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         Log.d(TAG, "onSharedPreferenceChanged -> key= " + key);
-        if (RAMToolApp.bLog) mLogHelper.appendLog("RAMToolApp::onSharedPreferenceChanged()-> key= " + key);
+        if (RAMToolApp.bLog)
+            mLogHelper.appendLog("RAMToolApp::onSharedPreferenceChanged()-> key= " + key);
         sZRAMDirectory = "/sys/devices/virtual/block";
         // Read SharedPreferences
         // prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -467,12 +469,12 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         //if (hasZRAM3() == true) diskNum++;
         //iDiskNum = diskNum;
         //getSwappiness();
-       //getVFSCachePressure();
+        //getVFSCachePressure();
         //int r1num = 0;
         //int r2num = 0;
         //int r3num = 0;
         //int r4num = 0;
-       // int ZRAMSizeTot = 0;
+        // int ZRAMSizeTot = 0;
 /*
         try {
             if (hasZRAM0() == true || hasZRAM0() == false) {
@@ -547,6 +549,11 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         try {
             FileReader localFileReader = new FileReader(str1);
             BufferedReader localBufferedReader = new BufferedReader(localFileReader, 8192);
+/*
+            while ((str2 = localBufferedReader.readLine()) != null) {
+                if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog(str2);
+            }
+*/
             str2 = localBufferedReader.readLine();//meminfo
             arrayOfString = str2.split("\\s+");
             iMemory[4] = Integer.valueOf(arrayOfString[1]).intValue();
@@ -566,6 +573,9 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
             iMemory[3] = iMemory[0] + iMemory[1] + iMemory[2];
             localBufferedReader.close();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         iFreeMemory = iMemory[0];
         iCachedMemory = iMemory[2];
