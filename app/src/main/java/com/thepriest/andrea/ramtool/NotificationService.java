@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -295,6 +296,13 @@ public class NotificationService extends Service {
     }
 
     private void cleanMemoryKeepingRecents() {
+/*
+        try {
+            sRealProcessName = (String) packageManager.getApplicationLabel(packageManager.getApplicationInfo(procInfos.get(i).processName, PackageManager.GET_META_DATA));
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+*/
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> procInfos = activityManager.getRunningAppProcesses();    //
         List<ActivityManager.RecentTaskInfo> recentTasks = activityManager.getRecentTasks(30, 0);
