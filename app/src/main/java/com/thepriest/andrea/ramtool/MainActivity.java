@@ -92,8 +92,9 @@ public class MainActivity extends AppCompatActivity {
         //String versionName = BuildConfig.VERSION_NAME;
         getSupportActionBar().setSubtitle(versionName);
         //getSupportActionBar().setWindowTitle("wind");
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.ic_launcher_96);
+        getSupportActionBar().setDisplayUseLogoEnabled(false);
+        //getSupportActionBar().setLogo(R.drawable.ic_launcher_96);
+        getSupportActionBar().setIcon(R.drawable.ic_launcher_64);
 /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
         setSupportActionBar(toolbar);
