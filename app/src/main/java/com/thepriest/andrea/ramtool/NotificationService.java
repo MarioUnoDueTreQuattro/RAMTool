@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -287,8 +288,14 @@ public class NotificationService extends Service {
             }
         }
     }
-
+    public int getMemoryUsage() {
+        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);//"activity");
+        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+        am.getMemoryInfo(mi);
+        return (int) mi.availMem / 1024 / 1024;
+    }
     private void cleanDropCache() {
+ //       int freeMemBefore = getMemoryUsage();
         if (RAMToolApp.bLog)
             RAMToolApp.mLogHelper.appendLog("DROPPING DROP CACHE: Reached memory limit (" + RAMToolApp.iMemoryLimitToDropCache+"MB)", LogHelper.LogColor.RED);
         try {
@@ -299,6 +306,9 @@ public class NotificationService extends Service {
         } finally {
         }
         if (BuildConfig.DEBUG) Log.d(TAG, "cleanDropCache");
+//        RAMToolApp app = ((RAMToolApp) this.getApplication());
+//        app.ShowToast(getString(R.string.drop_cache_cleaned) + (getMemoryUsage() - freeMemBefore) + " MB");
+       // Toast.makeText(getApplicationContext(), getString(R.string.drop_cache_cleaned) + (getMemoryUsage() - freeMemBefore) + " MB", Toast.LENGTH_LONG).show();
     }
 
     private void cleanMemoryKeepingRecents() {
