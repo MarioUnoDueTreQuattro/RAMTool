@@ -15,7 +15,7 @@ android {
         applicationId "com.thepriest.andrea.ramtool"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 1011
+        versionCode 1012
         versionName '1.01'
         signingConfig signingConfigs.config
     }

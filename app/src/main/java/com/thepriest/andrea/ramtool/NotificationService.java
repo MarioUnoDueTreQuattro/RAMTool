@@ -170,12 +170,14 @@ public class NotificationService extends Service {
 //            appLaunch.setSmallIcon(R.drawable.ic_launcher_48);
             //appLaunch.setContentText("Total Free: " + RAMToolApp.iTotalFreeMemory + " - Free: " + RAMToolApp.iFreeMemory + " - Cached: " + RAMToolApp.iCachedMemory + " - Buffers: " + RAMToolApp.iBuffersMemory);
             //appLaunch.setContentTitle("ZRAM used: " + iZRAMUsage + " - Max ZRAM: " + iMaximumZRAMUsage);
-            appLaunch.setContentText(getString(R.string.Total_Free) + RAMToolApp.iTotalFreeMemory + getString(R.string._Free) + RAMToolApp.iFreeMemory + getString(R.string._Cached) + RAMToolApp.iCachedMemory + getString(R.string._Buffers) + RAMToolApp.iBuffersMemory);
-            appLaunch.setContentTitle(getString(R.string.ZRAM_used) + iZRAMUsage + getString(R.string._Max_ZRAM) + iMaximumZRAMUsage);
+//            appLaunch.setContentText(getString(R.string.Total_Free) + RAMToolApp.iTotalFreeMemory + getString(R.string._Free) + RAMToolApp.iFreeMemory + getString(R.string._Cached) + RAMToolApp.iCachedMemory + getString(R.string._Buffers) + RAMToolApp.iBuffersMemory);
+//            appLaunch.setContentTitle(getString(R.string.ZRAM_used) + iZRAMUsage + getString(R.string._Max_ZRAM) + iMaximumZRAMUsage);
+            appLaunch.setContentText( getString(R.string._Free) + RAMToolApp.iFreeMemory + getString(R.string._Cached) + RAMToolApp.iCachedMemory + getString(R.string._Buffers) + RAMToolApp.iBuffersMemory);
+            appLaunch.setContentTitle(getString(R.string.Total_Free) + RAMToolApp.iTotalFreeMemory);
             //appLaunch.setAutoCancel(true);
             appLaunch.setTicker(getString(R.string.Launched_RAMTool_background_service));
             appLaunch.setOngoing(true);
-            appLaunch.setUsesChronometer(true);
+            //appLaunch.setUsesChronometer(true);
             Intent targetIntent = new Intent(this, MainActivity.class);
             PendingIntent contentIntent = PendingIntent.getActivity(this, 0, targetIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             appLaunch.setContentIntent(contentIntent);

@@ -46,7 +46,7 @@
 	<string name="ZRAM_used">"ZRAM usata: "</string>
 	<string name="Free">"Libera: "</string>
 	<string name="Total_Free">"Libera totale: "</string>
-	<string name="_Free">" - Libera: "</string>
+	<string name="_Free">"Libera: "</string>
 	<string name="Maximum_free_memory">"Memoria libera massima: "</string>
 	<string name="Minimum_free_memory">"Memoria libera minima: "</string>
 	<string name="RAM_Status">RAM </string>
