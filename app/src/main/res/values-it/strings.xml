@@ -54,7 +54,6 @@
 	<string name="kernel_version">"\n\nVersione del Kernel: "</string>
 	<string name="action_configure_zram">Configura ZRAM</string>
 	<string name="dialog_title_process_limit">App recenti da non terminare</string>
-	<string name="summary_edittext_process_limit">App recenti da non terminare</string>
 	<string name="title_edittext_process_limit">App recenti da non terminare</string>
 	<string name="action_log">Visualizza registro</string>
 	<string name="title_activity_log_">Registro</string>

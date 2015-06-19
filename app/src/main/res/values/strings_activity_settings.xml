@@ -116,12 +116,12 @@
     <string name="pref_title_enable_auto_kill">Automatic kill</string>
     <string name="title_edittext_MemoryLimitToDropCache">Memory limit to "drop cache"</string>
     <string name="title_edittext_MemoryLimitToKill">Memory limit to kill in MB</string>
-    <string name="summary_edittext_MemoryLimitToDropCache">Limit in MB</string>
-    <string name="summary_edittext_MemoryLimitToKill">Limit in MB</string>
+    <string name="summary_edittext_MemoryLimitToDropCache">Limit in MB, default is 160</string>
+    <string name="summary_edittext_MemoryLimitToKill">Limit in MB, default is 128</string>
     <string name="dialog_title_MemoryLimitToDropCache">Limit in MB</string>
     <string name="dialog_title_MemoryLimitToKill">Limit in MB</string>
     <string name="title_edittext_process_limit">Don\'t kill recent apps</string>
-    <string name="summary_edittext_process_limit">Don\'t kill recent apps</string>
+    <string name="summary_edittext_process_limit">Don\'t kill recent apps, default is 4</string>
     <string name="dialog_title_process_limit">Don\'t kill recent apps</string>
 
 </resources>

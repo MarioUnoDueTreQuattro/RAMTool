@@ -114,7 +114,7 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         ipref = Integer.parseInt(prefString);
         iMemoryLimitToKill = ipref;
         Log.d(TAG, "iMemoryLimitToKill= " + iMemoryLimitToKill);
-        prefString = prefs.getString("process_limit", "30");
+        prefString = prefs.getString("process_limit", "4");
         ipref = Integer.parseInt(prefString);
         iProcessLimit = ipref;
         Log.d(TAG, "process_limit= " + iProcessLimit);
