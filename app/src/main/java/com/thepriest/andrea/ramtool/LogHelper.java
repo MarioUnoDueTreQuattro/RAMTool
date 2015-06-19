@@ -52,19 +52,26 @@ public class LogHelper {
     }
 
     public static void appendLog(String sText) {
+/*
         if (sLogText.length() > (1048576)) clearLog(); // Size is 1 MB, 1024 KB?
         Time currentTime = new Time();
         currentTime.setToNow();
         sText = currentTime.format("%H:%M:%S") + " " + sText;
         sLogText = sWhiteColor + sText + "\n" + sLogText + sClose;
+*/
+        appendLog(sText,LogColor.WHITE);
     }
 
     public static void appendLog(String sText, LogColor iType) {
+        if (sLogText.length() > (1048576)) clearLog(); // Size is 1 MB, 1024 KB? //TODO don't clear log
         Time currentTime = new Time();
         currentTime.setToNow();
         sText = currentTime.format("%H:%M:%S") + " " + sText;
         //      sLogText = sText + "\n" + sLogText;
         switch (iType) {
+            case WHITE:
+                sLogText = sWhiteColor + sText + "\n" + sLogText + sClose;
+                break;
             case RED:
                 sLogText = sType1Color + sText + "\n" + sLogText + sClose;
                 break;
