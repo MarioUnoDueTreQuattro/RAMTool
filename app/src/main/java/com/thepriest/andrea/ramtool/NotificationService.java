@@ -172,7 +172,8 @@ public class NotificationService extends Service {
             //appLaunch.setContentTitle("ZRAM used: " + iZRAMUsage + " - Max ZRAM: " + iMaximumZRAMUsage);
 //            appLaunch.setContentText(getString(R.string.Total_Free) + RAMToolApp.iTotalFreeMemory + getString(R.string._Free) + RAMToolApp.iFreeMemory + getString(R.string._Cached) + RAMToolApp.iCachedMemory + getString(R.string._Buffers) + RAMToolApp.iBuffersMemory);
 //            appLaunch.setContentTitle(getString(R.string.ZRAM_used) + iZRAMUsage + getString(R.string._Max_ZRAM) + iMaximumZRAMUsage);
-            appLaunch.setContentText( getString(R.string._Free) + RAMToolApp.iFreeMemory + getString(R.string._Cached) + RAMToolApp.iCachedMemory + getString(R.string._Buffers) + RAMToolApp.iBuffersMemory);
+            appLaunch.setShowWhen(false);
+            appLaunch.setContentText(getString(R.string._Free) + RAMToolApp.iFreeMemory + getString(R.string._Cached) + RAMToolApp.iCachedMemory + getString(R.string._Buffers) + RAMToolApp.iBuffersMemory);
             appLaunch.setContentTitle(getString(R.string.Total_Free) + RAMToolApp.iTotalFreeMemory);
             //appLaunch.setAutoCancel(true);
             appLaunch.setTicker(getString(R.string.Launched_RAMTool_background_service));
@@ -185,7 +186,7 @@ public class NotificationService extends Service {
             // mNotificationManager.cancelAll();
             //mNotificationManager.notify(0, appLaunch.build());
             Notification note = appLaunch.build();
-            startForeground(1337, note);
+            startForeground(1237, note);
         }
     }
 
