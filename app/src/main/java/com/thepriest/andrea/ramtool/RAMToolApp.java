@@ -24,7 +24,7 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
     public static LogHelper mLogHelper;
     static public int iRefreshFrequency;
     static public String sZRAMDirectory, sLanguage;
-    static public boolean bShowNotification, bShowAdvancedNotification, bDoubleBackToExit, bEnableDropCache, bLog, bScreenIsOn;
+    static public boolean bShowNotification, bShowAdvancedNotification, bDoubleBackToExit, bEnableDropCache, bLog, bScreenIsOn,bEnableKill;
     static public int iDiskNum;
     static public int iZRAMSize, iZRAMComprDataSize, iZRAMTotalMemoryUsed, iZRAMMaximumUsage;
     static public int iFreeMemory, iCachedMemory, iBuffersMemory, iTotalFreeMemory, iTotalMemory, iMinFreeMemory, iMaxFreeMemory;
@@ -39,7 +39,7 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
     public static int iZRAMStatus[] = new int[4];
     public static int iMemory[] = new int[5];
     public static int memory[] = new int[5];
-    public static int iMemoryLimitToDropCache;
+    public static int iMemoryLimitToDropCache,iMemoryLimitToKill;
     public static int iProcessLimit;
     //public static String sLogText = "";
     static public BroadcastReceiver mReceiver;
@@ -104,14 +104,20 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         Log.d(TAG, "double_back_to_exit= " + bDoubleBackToExit);
         bEnableDropCache = prefs.getBoolean("enable_auto_drop_cache", false);
         Log.d(TAG, "bEnableDropCache= " + bEnableDropCache);
-        prefString = prefs.getString("memory_limit_to_drop_cache", "128");
+        bEnableKill = prefs.getBoolean("enable_auto_kill", false);
+        Log.d(TAG, "bEnableKill= " + bEnableKill);
+        prefString = prefs.getString("memory_limit_to_drop_cache", "160");
         ipref = Integer.parseInt(prefString);
         iMemoryLimitToDropCache = ipref;
         Log.d(TAG, "memory_limit_to_drop_cache= " + iMemoryLimitToDropCache);
+        prefString = prefs.getString("memory_limit_to_kill", "128");
+        ipref = Integer.parseInt(prefString);
+        iMemoryLimitToKill = ipref;
+        Log.d(TAG, "iMemoryLimitToKill= " + iMemoryLimitToKill);
         prefString = prefs.getString("process_limit", "30");
         ipref = Integer.parseInt(prefString);
         iProcessLimit = ipref;
-        Log.d(TAG, "process_limit= " + iMemoryLimitToDropCache);
+        Log.d(TAG, "process_limit= " + iProcessLimit);
         bLog = prefs.getBoolean("enable_log", false);
         Log.d(TAG, "bLog= " + bLog);
         if (RAMToolApp.bLog)
@@ -191,9 +197,13 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         bShowAdvancedNotification = prefs.getBoolean("enable_advanced_notification", false);
         bDoubleBackToExit = prefs.getBoolean("double_back_to_exit", false);
         bEnableDropCache = prefs.getBoolean("enable_auto_drop_cache", false);
+        bEnableKill = prefs.getBoolean("enable_auto_kill", false);
         prefString = prefs.getString("memory_limit_to_drop_cache", "128");
         ipref = Integer.parseInt(prefString);
         iMemoryLimitToDropCache = ipref;
+        prefString = prefs.getString("memory_limit_to_kill", "128");
+        ipref = Integer.parseInt(prefString);
+        iMemoryLimitToKill = ipref;
         prefString = prefs.getString("process_limit", "30");
         ipref = Integer.parseInt(prefString);
         iProcessLimit = ipref;

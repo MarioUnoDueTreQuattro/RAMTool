@@ -7,7 +7,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -95,7 +94,8 @@ public class NotificationService extends Service {
     @Override
     public synchronized void onDestroy() {
         Log.d(TAG, "onDestroy");
-        if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("NotificationService::onDestroy()", LogHelper.LogColor.GRAY);
+        if (RAMToolApp.bLog)
+            RAMToolApp.mLogHelper.appendLog("NotificationService::onDestroy()", LogHelper.LogColor.GRAY);
         super.onDestroy();
         updater.running = false;
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -259,18 +259,20 @@ public class NotificationService extends Service {
                     try {
                         if (RAMToolApp.bShowAdvancedNotification) setNotification2();
                         else setNotification();
-                        if (RAMToolApp.iTotalFreeMemory < RAMToolApp.iMemoryLimitToDropCache && RAMToolApp.bEnableDropCache && iCounter > 4) {
+
+                        if (iCounter > 4) {
                             iCounter = 0;
-                            cleanMemoryKeepingRecents();
-                            cleanDropCache();
+                            if (RAMToolApp.iTotalFreeMemory < RAMToolApp.iMemoryLimitToDropCache && RAMToolApp.bEnableDropCache)
+                                cleanDropCache();
+                            if (RAMToolApp.iTotalFreeMemory < RAMToolApp.iMemoryLimitToKill && RAMToolApp.bEnableKill)
+                                cleanMemoryKeepingRecents();
                         }
                         Updater.sleep(RAMToolApp.iRefreshFrequency);
                         if (!running) return;
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
-                else{
+                } else {
                     try {
                         Updater.sleep(RAMToolApp.iRefreshFrequency);
                         if (!running) return;
@@ -329,12 +331,14 @@ public class NotificationService extends Service {
                 if (sRecentPackageName.equals(sProcName)) {
                     bProcIsInRecentLimit = true;
                     //Log.d(TAG, "sRecentPackageName == sProcName NOT killBackgroundProcesses= " + sProcName);
-                    if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("NOT KILL " + sProcName, LogHelper.LogColor.GREEN);
+                    if (RAMToolApp.bLog)
+                        RAMToolApp.mLogHelper.appendLog("NOT KILL " + sProcName, LogHelper.LogColor.GREEN);
                 }
             }
             if (bProcIsInRecentLimit == false) {
                 activityManager.killBackgroundProcesses(sProcName);
-                if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog(sProcName, LogHelper.LogColor.BLUE);
+                if (RAMToolApp.bLog)
+                    RAMToolApp.mLogHelper.appendLog(sProcName, LogHelper.LogColor.BLUE);
                 //   Log.d(TAG, "killBackgroundProcesses= " + sProcName);
             } else {
                 //   Log.d(TAG, "NOT killBackgroundProcesses= " + sProcName);
