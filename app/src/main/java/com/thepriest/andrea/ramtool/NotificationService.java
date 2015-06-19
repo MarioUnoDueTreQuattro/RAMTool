@@ -286,6 +286,8 @@ public class NotificationService extends Service {
     }
 
     private void cleanDropCache() {
+        if (RAMToolApp.bLog)
+            RAMToolApp.mLogHelper.appendLog("DROPPING DROP CACHE: Reached memory limit (" + RAMToolApp.iMemoryLimitToDropCache+"MB)", LogHelper.LogColor.RED);
         try {
             Shell.sudo("sync");
             Shell.sudo("echo 3 > /proc/sys/vm/drop_caches");
@@ -315,7 +317,7 @@ public class NotificationService extends Service {
         boolean bProcIsInRecentLimit = true;
         //final  ArrayList<ApplicationInfo> recents = new  ArrayList<ApplicationInfo>();
         if (RAMToolApp.bLog)
-            RAMToolApp.mLogHelper.appendLog("KILLING: RecentCount= " + recentCount + " ..... ProcessLimit= " + RAMToolApp.iProcessLimit, LogHelper.LogColor.RED);
+            RAMToolApp.mLogHelper.appendLog("KILLING: Reached memory limit (" +RAMToolApp.iMemoryLimitToKill+"MB), RecentCount=" + recentCount + ", ProcessLimit=" + RAMToolApp.iProcessLimit, LogHelper.LogColor.RED);
         if (BuildConfig.DEBUG)
             Log.d(TAG, "recentCount= " + recentCount + " ..... Process limit= " + RAMToolApp.iProcessLimit);
         for (int i = 0; i < procCount; i++) {

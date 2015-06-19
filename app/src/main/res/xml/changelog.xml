@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
     <release
+        version="1.01"
+        versioncode="1010">
+        <change>New "Auto kill" option unlinked from "Auto drop cache". Each option has its own trigger limit in MB.</change>
+        <change>Default for "Auto kill" is 160 MB.</change>
+        <change>Default for "Auto drop cache" is 128 MB.</change>
+    </release>
+    <release
         version="1.00"
         versioncode="1000">
         <change>Initial release.</change>
