@@ -298,7 +298,6 @@ public class NotificationService extends Service {
             e.printStackTrace();
         } finally {
         }
-        // Toast.makeText(getApplicationContext(), "Drop Cache cleaned.", Toast.LENGTH_LONG).show();
         if (BuildConfig.DEBUG) Log.d(TAG, "cleanDropCache");
     }
 
@@ -349,6 +348,7 @@ public class NotificationService extends Service {
                 //   Log.d(TAG, "NOT killBackgroundProcesses= " + sProcName);
             }
         }
+
 /*
         if (recentCount > RAMToolApp.iProcessLimit)
             for (int i = RAMToolApp.iProcessLimit; i < recentCount; i++) {
