@@ -4,6 +4,8 @@ import android.app.ActivityManager;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -79,7 +81,15 @@ public class MainActivity extends AppCompatActivity {
         //Debug.startMethodTracing();
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        String versionName = BuildConfig.VERSION_NAME;
+        PackageInfo pinfo = null;
+        try {
+            pinfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        //int versionCode = pinfo.versionCode;
+        String versionName = pinfo.versionName;
+        //String versionName = BuildConfig.VERSION_NAME;
         getSupportActionBar().setSubtitle(versionName);
         //getSupportActionBar().setWindowTitle("wind");
         getSupportActionBar().setDisplayUseLogoEnabled(true);
