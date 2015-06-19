@@ -110,8 +110,13 @@
     <string name="pref_title_enable_advanced_notification">Notifica avanzata</string>
     <string name="pref_title_double_back_to_exit">Premi due volte indietro per uscire</string>
     <string name="dialog_title_MemoryLimitToDropCache">Limite in MB</string>
-    <string name="pref_title_enable_auto_drop_cache">Drop cache automatica</string>
+    <string name="pref_title_enable_auto_drop_cache">Drop cache automaticamente</string>
     <string name="summary_edittext_MemoryLimitToDropCache">Limite in MB</string>
     <string name="title_edittext_MemoryLimitToDropCache">Limite di memoria per "drop cache"</string>
+    <string name="pref_title_enable_auto_kill">Termina automaticamente</string>
+    <string name="title_edittext_MemoryLimitToKill">Limite di memoria per terminare in MB</string>
+    <string name="summary_edittext_MemoryLimitToKill">Limite in MB</string>
+    <string name="dialog_title_MemoryLimitToKill">Limite in MB</string>
+
 
 </resources>

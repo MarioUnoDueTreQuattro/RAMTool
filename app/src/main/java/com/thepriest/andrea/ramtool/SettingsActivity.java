@@ -87,6 +87,7 @@ public class SettingsActivity extends PreferenceActivity {
         //bindPreferenceSummaryToValue(findPreference("double_back_to_exit"));
         // bindPreferenceSummaryToValue(findPreference("MemoryLimitToDropCache"));
         bindPreferenceSummaryToValue(findPreference("memory_limit_to_drop_cache"));
+        bindPreferenceSummaryToValue(findPreference("memory_limit_to_kill"));
         bindPreferenceSummaryToValue(findPreference("process_limit"));
         bindPreferenceSummaryToValue(findPreference("refresh_frequency"));
         bindPreferenceSummaryToValue(findPreference("pref_ZRAM_directory"));

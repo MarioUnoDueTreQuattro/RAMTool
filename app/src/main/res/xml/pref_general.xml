@@ -45,9 +45,22 @@
         android:summary="@string/summary_edittext_MemoryLimitToDropCache"
         android:dialogTitle="@string/dialog_title_MemoryLimitToDropCache" />
 
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:dependency="enable_notification"
+        android:key="enable_auto_kill"
+        android:title="@string/pref_title_enable_auto_kill"/>
     <EditTextPreference
         android:numeric="integer"
-        android:dependency="enable_auto_drop_cache"
+        android:dependency="enable_auto_kill"
+        android:key="memory_limit_to_kill"
+        android:title="@string/title_edittext_MemoryLimitToKill"
+        android:summary="@string/summary_edittext_MemoryLimitToKill"
+        android:dialogTitle="@string/dialog_title_MemoryLimitToKill" />
+
+    <EditTextPreference
+        android:numeric="integer"
+        android:dependency="enable_auto_kill"
         android:key="process_limit"
         android:title="@string/title_edittext_process_limit"
         android:summary="@string/summary_edittext_process_limit"
