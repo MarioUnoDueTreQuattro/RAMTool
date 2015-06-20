@@ -94,8 +94,8 @@ public class NotificationService extends Service {
     @Override
     public synchronized void onDestroy() {
         Log.d(TAG, "onDestroy");
-        if (RAMToolApp.bLog)
-            RAMToolApp.mLogHelper.appendLog("NotificationService::onDestroy()", LogHelper.LogColor.GRAY);
+       // if (RAMToolApp.bLog)
+        //    RAMToolApp.mLogHelper.appendLog("NotificationService::onDestroy()", LogHelper.LogColor.GRAY);
         super.onDestroy();
         updater.running = false;
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -296,7 +296,7 @@ public class NotificationService extends Service {
     private void cleanDropCache() {
  //       int freeMemBefore = getMemoryUsage();
         if (RAMToolApp.bLog)
-            RAMToolApp.mLogHelper.appendLog("DROPPING DROP CACHE: Reached memory limit (" + RAMToolApp.iMemoryLimitToDropCache+"MB)", LogHelper.LogColor.RED);
+            RAMToolApp.mLogHelper.appendLog(getString(R.string.dropping_drop_cache) + RAMToolApp.iMemoryLimitToDropCache+"MB)", LogHelper.LogColor.RED);
         try {
             Shell.sudo("sync");
             Shell.sudo("echo 3 > /proc/sys/vm/drop_caches");
@@ -345,7 +345,7 @@ public class NotificationService extends Service {
                     bProcIsInRecentLimit = true;
                     //Log.d(TAG, "sRecentPackageName == sProcName NOT killBackgroundProcesses= " + sProcName);
                     if (RAMToolApp.bLog)
-                        RAMToolApp.mLogHelper.appendLog("NOT KILL " + sProcName, LogHelper.LogColor.GREEN);
+                        RAMToolApp.mLogHelper.appendLog(getString(R.string.not_kill) + sProcName, LogHelper.LogColor.GREEN);
                 }
             }
             if (bProcIsInRecentLimit == false) {

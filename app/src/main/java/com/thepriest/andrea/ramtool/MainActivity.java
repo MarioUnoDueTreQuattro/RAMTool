@@ -334,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         Log.d(TAG, "onDestroy()");
  //       if (RAMToolApp.bLog) RAMToolApp.appendLog("MainActivity::onDestroy()", RAMToolApp.LogColor.GRAY);
-        if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("MainActivity::onDestroy()", LogHelper.LogColor.GRAY);
+        //if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("MainActivity::onDestroy()", LogHelper.LogColor.GRAY);
         mHandler = null;
         super.onDestroy();
         //Debug.stopMethodTracing();

@@ -121,7 +121,7 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
         bLog = prefs.getBoolean("enable_log", false);
         Log.d(TAG, "bLog= " + bLog);
         if (RAMToolApp.bLog)
-            mLogHelper.appendLog("RAMToolApp::onCreate()", LogHelper.LogColor.GRAY);
+            mLogHelper.appendLog(getString(R.string.ramtool_started), LogHelper.LogColor.GRAY);
         /**
          * set language
          */
@@ -163,8 +163,8 @@ public class RAMToolApp extends Application implements OnSharedPreferenceChangeL
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         Log.d(TAG, "onSharedPreferenceChanged -> key= " + key);
-        if (RAMToolApp.bLog)
-            mLogHelper.appendLog("RAMToolApp::onSharedPreferenceChanged()-> key= " + key);
+        //if (RAMToolApp.bLog)
+        //    mLogHelper.appendLog("RAMToolApp::onSharedPreferenceChanged()-> key= " + key);
         sZRAMDirectory = "/sys/devices/virtual/block";
         // Read SharedPreferences
         // prefs = PreferenceManager.getDefaultSharedPreferences(this);

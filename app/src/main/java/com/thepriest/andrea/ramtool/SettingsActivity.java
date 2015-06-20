@@ -239,7 +239,7 @@ public class SettingsActivity extends PreferenceActivity {
     @Override
     protected void onDestroy() {
         Log.d(TAG, "onDestroy");
-        if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("PreferenceActivity::onDestroy()", LogHelper.LogColor.GRAY);
+        //if (RAMToolApp.bLog) RAMToolApp.mLogHelper.appendLog("PreferenceActivity::onDestroy()", LogHelper.LogColor.GRAY);
         super.onDestroy();
     }
 
