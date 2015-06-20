@@ -64,4 +64,9 @@
 	<string name="log_enabled">Log abilitato.\n</string>
 	<string name="version_code">"\n\nCodice versione: "</string>
 	<string name="drop_cache_cleaned">"Drop Cache pulita... "</string>
+	<string name="ramtool_started">RAMTool started.</string>
+	<string name="dropping_drop_cache">RILASCIO DROP CACHE: Raggiunto limite di memoria (</string>
+	<string name="screen_off">Schermo OFF: riposo...</string>
+	<string name="screen_on">Schermo ON: risveglio...</string>
+	<string name="not_kill">"NON CHIUDE "</string>
 </resources>
