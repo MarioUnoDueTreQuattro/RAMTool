@@ -23,7 +23,7 @@ public class NotificationService extends Service {
     private Updater updater;
     public boolean bIsRunning = false;
     static public int iRefreshFrequency;
-    static public int iZRAMUsage, iMaximumZRAMUsage, iCounter;
+    static public int iZRAMUsage, iMaximumZRAMUsage, iCounter,iLastNotificationDrawable;
 
     /**
      * Called by the system every time a client explicitly starts the service by calling
@@ -124,6 +124,7 @@ public class NotificationService extends Service {
     public void onCreate() {
         Log.d(TAG, "onCreate");
         super.onCreate();
+        iLastNotificationDrawable=0;
         iCounter = 0; //more than 5 if i want cleanDropCache() called on first run of Updater thread
         updater = new Updater();
     }
@@ -163,6 +164,8 @@ public class NotificationService extends Service {
             NotificationCompat.Builder appLaunch = new NotificationCompat.Builder(this);
             String sDrawable = "mb";
             int iDrawable = RAMToolApp.iTotalFreeMemory / 5;
+            if (iDrawable==iLastNotificationDrawable) return;
+            iLastNotificationDrawable=iDrawable;
             sDrawable += iDrawable;
             int drawableResourceId = this.getResources().getIdentifier(sDrawable, "drawable", this.getPackageName());
             //if (drawableResourceId==0) Log.d(TAG,"drawableResourceId NOT FOUND");
