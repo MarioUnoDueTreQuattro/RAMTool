@@ -69,6 +69,7 @@
 	<string name="dropping_drop_cache">RILASCIO DROP CACHE: Raggiunto limite di memoria (</string>
 	<string name="screen_off">Schermo OFF: riposo...</string>
 	<string name="screen_on">Schermo ON: risveglio...</string>
-	<string name="not_kill">"NON CHIUDE "</string>
+	<string name="not_kill">"NON TERMINA "</string>
 	<string name="clean_keeping_recents">Pulire mantenendo recenti</string>
+	<string name="killing_reached_memory_limit">TERMINO: Raggiunto limite di memoria (</string>
 </resources>

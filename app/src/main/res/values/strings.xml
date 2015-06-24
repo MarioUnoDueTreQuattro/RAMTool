@@ -72,5 +72,6 @@
     <string name="screen_on">Screen ON: waking up...</string>
     <string name="not_kill">"DON'T KILL "</string>
     <string name="clean_keeping_recents">Clean keeping recents</string>
+    <string name="killing_reached_memory_limit">KILLING: Reached memory limit (</string>
 
 </resources>
