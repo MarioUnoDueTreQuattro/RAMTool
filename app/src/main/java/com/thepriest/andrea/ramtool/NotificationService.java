@@ -162,7 +162,7 @@ public class NotificationService extends Service {
             iMaximumZRAMUsage = RAMToolApp.iZRAMMaximumUsage;
             NotificationCompat.Builder appLaunch = new NotificationCompat.Builder(this);
             String sDrawable = "mb";
-            int iDrawable = (RAMToolApp.iTotalFreeMemory);// / 5) * 5;
+            int iDrawable = RAMToolApp.iTotalFreeMemory / 5;
             sDrawable += iDrawable;
             int drawableResourceId = this.getResources().getIdentifier(sDrawable, "drawable", this.getPackageName());
             //if (drawableResourceId==0) Log.d(TAG,"drawableResourceId NOT FOUND");
@@ -210,7 +210,8 @@ public class NotificationService extends Service {
             appLaunch.setTicker(getString(R.string.Launched_RAMTool_background_service));
             //appLaunch.setSmallIcon(R.drawable.ic_launcher_48);
             String sDrawable = "mb";
-            int iDrawable = (RAMToolApp.iTotalFreeMemory);// / 5) * 5;
+            //int iDrawable = (RAMToolApp.iTotalFreeMemory);// / 5) * 5;
+            int iDrawable = RAMToolApp.iTotalFreeMemory / 5;
             sDrawable += iDrawable;
             int drawableResourceId = this.getResources().getIdentifier(sDrawable, "drawable", this.getPackageName());
             //if (drawableResourceId==0) Log.d(TAG,"drawableResourceId NOT FOUND");

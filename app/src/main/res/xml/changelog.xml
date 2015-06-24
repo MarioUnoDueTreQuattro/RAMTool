@@ -4,7 +4,8 @@
         version="1.02"
         versioncode="1020">
         <change>Added "Clean keeping recents" button.</change>
-        <change>Changed icons.</change>
+        <change>Notification icons from 0 to 999 with 5 MB steps to preserve memory (less icons).</change>
+        <change>Changed app icons and notification icons (now notification icons are 48x48).</change>
         <change>Other small changes.</change>
     </release>
     <release
