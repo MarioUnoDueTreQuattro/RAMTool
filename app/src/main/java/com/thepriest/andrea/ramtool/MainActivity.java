@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewTotalSize, textViewTotalMemoryUsed, textViewOrigDataSize, textViewComprDataSize, textViewSwappiness, textViewFreeRam,
             textViewBuffers, textViewCached, textViewTotalFree, textViewTotal, textViewMinFreeRAM, textViewMaxFreeRAM;
     TextView textViewDiskNum, textViewVFS_cache_pressure, textViewMaxZRAMUsage;
-    Button buttonDisableZRAM, buttonEnableZRAM, buttonCleanMemory, buttonCleanDropCache, buttonCleanAll;
+    Button buttonDisableZRAM, buttonEnableZRAM, buttonCleanMemory, buttonCleanDropCache, buttonCleanAll,buttonCleanKeepingRecents;
     //ProgressBar progressBarTotalMemoryUsed, progressBarOrigDataSize, progressBarComprDataSize, progressBarMaxZRAMUsage;
     static public int iSwappiness, iZRAMSize, iDiskNum, iVFSCachePressure, iZRAMUsage, iMaximumZRAMUsage;
     static public int iRefreshFrequency;
@@ -253,6 +253,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cleanMemoryAndDropCache();
+            }
+        });
+        buttonCleanKeepingRecents = (Button) findViewById(R.id.buttonCleanKeepingRecents);
+        buttonCleanKeepingRecents.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                cleanMemoryKeepingRecents();
             }
         });
         b_isActivityVisible = true;
@@ -593,6 +601,67 @@ int freeMemBefore = getMemoryUsage();
         Toast.makeText(getApplicationContext(), getString(R.string.Memory_cleaned) + (getMemoryUsage() - freeMemBefore)+" MB", Toast.LENGTH_LONG).show();
         return;
     }
+    private void cleanMemoryKeepingRecents() {
+/*
+        try {
+            sRealProcessName = (String) packageManager.getApplicationLabel(packageManager.getApplicationInfo(procInfos.get(i).processName, PackageManager.GET_META_DATA));
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+*/
+        int freeMemBefore = getMemoryUsage();
+
+        ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> procInfos = activityManager.getRunningAppProcesses();    //
+        List<ActivityManager.RecentTaskInfo> recentTasks = activityManager.getRecentTasks(30, 0);
+        int recentCount = recentTasks.size();
+        int procCount = procInfos.size();
+        String sProcName = "";
+        String sRecentPackageName = "";
+        boolean bProcIsInRecentLimit = true;
+        //final  ArrayList<ApplicationInfo> recents = new  ArrayList<ApplicationInfo>();
+        //if (RAMToolApp.bLog)
+            //RAMToolApp.mLogHelper.appendLog("KILLING: Reached memory limit (" +RAMToolApp.iMemoryLimitToKill+"MB), RecentCount=" + recentCount + ", ProcessLimit=" + RAMToolApp.iProcessLimit, LogHelper.LogColor.RED);
+        //if (BuildConfig.DEBUG)
+            //Log.d(TAG, "recentCount= " + recentCount + " ..... Process limit= " + RAMToolApp.iProcessLimit);
+        for (int i = 0; i < procCount; i++) {
+            //if (procInfos.get(i).processName.equals("com.android.music")) {
+            //Toast.makeText(null, "music is running",
+            //      Toast.LENGTH_LONG).show();
+            sProcName = procInfos.get(i).processName;
+            bProcIsInRecentLimit = false;
+            for (int iRec = 0; iRec < RAMToolApp.iProcessLimit && iRec < recentCount; iRec++) {
+                Intent intent = recentTasks.get(iRec).baseIntent;
+                sRecentPackageName = intent.getComponent().getPackageName();
+                //Log.d(TAG, "-> cleanMemoryKeepingRecents() \"" + sRecentPackageName + "\"" + " " + "\"" + sProcName + "\"");
+                if (sRecentPackageName.equals(sProcName)) {
+                    bProcIsInRecentLimit = true;
+                    //Log.d(TAG, "sRecentPackageName == sProcName NOT killBackgroundProcesses= " + sProcName);
+                   // if (RAMToolApp.bLog)
+                    //    RAMToolApp.mLogHelper.appendLog(getString(R.string.not_kill) + sProcName, LogHelper.LogColor.GREEN);
+                }
+            }
+            if (bProcIsInRecentLimit == false) {
+                activityManager.killBackgroundProcesses(sProcName);
+               // if (RAMToolApp.bLog)
+                   // RAMToolApp.mLogHelper.appendLog(sProcName, LogHelper.LogColor.BLUE);
+                //   Log.d(TAG, "killBackgroundProcesses= " + sProcName);
+            } else {
+                //   Log.d(TAG, "NOT killBackgroundProcesses= " + sProcName);
+            }
+        }
+        Toast.makeText(getApplicationContext(), getString(R.string.Memory_cleaned_keeping_recents) + (getMemoryUsage() - freeMemBefore)+" MB", Toast.LENGTH_LONG).show();
+
+/*
+        if (recentCount > RAMToolApp.iProcessLimit)
+            for (int i = RAMToolApp.iProcessLimit; i < recentCount; i++) {
+                Intent intent = recentTasks.get(i).baseIntent;
+                String recentPackageName = intent.getComponent().getPackageName();
+                Log.d(TAG, "cleanMemoryKeepingRecents() " + recentPackageName);
+                activityManager.killBackgroundProcesses(recentPackageName);
+            }
+*/
+    }
 
     private boolean hasSuperuserApk() {
         return new File("/system/app/Superuser.apk").exists();
@@ -849,3 +918,4 @@ int freeMemBefore = getMemoryUsage();
     }
 
 }
+

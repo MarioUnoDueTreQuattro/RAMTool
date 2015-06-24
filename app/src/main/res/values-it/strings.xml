@@ -30,6 +30,7 @@
 	<string name="ZRAM_disabled">ZRAM disabilitato.</string>
 	<string name="Tap_back_button">Toccare il pulsante indietro due volte per nascondere.\nUsa il pulsante di uscita per uscire.</string>
 	<string name="Use_Exit_button_to_exit">Utilizzare il pulsante Uscita per uscire.</string>
+	<string name="Memory_cleaned_keeping_recents">"Memoria e Drop Cache puliti mantenendo i recenti... "</string>
 	<string name="Memory_and_Drop_Cache_cleaned">"Memoria e Drop Cache puliti... "</string>
 	<string name="Memory_cleaned">"Memoria pulita... "</string>
 	<string name="Launched_RAMTool_background_service">Lanciato servizio in background di RAMTool per l\'aggiornamento della notifica ...</string>
@@ -69,4 +70,5 @@
 	<string name="screen_off">Schermo OFF: riposo...</string>
 	<string name="screen_on">Schermo ON: risveglio...</string>
 	<string name="not_kill">"NON CHIUDE "</string>
+	<string name="clean_keeping_recents">Pulire mantenendo recenti</string>
 </resources>

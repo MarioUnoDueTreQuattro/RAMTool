@@ -113,6 +113,13 @@
                 android:id="@+id/buttonCleanDropCache"
                 android:layout_weight="1"/>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
             <Button
                 style="@style/ButtonTheme"
                 android:layout_width="wrap_content"
@@ -120,6 +127,15 @@
                 android:text="@string/CleanAll"
                 android:id="@+id/buttonCleanAll"
                 android:layout_weight="1"/>
+
+            <Button
+                style="@style/ButtonTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="@string/clean_keeping_recents"
+                android:id="@+id/buttonCleanKeepingRecents"
+                android:layout_weight="1"/>
+
         </LinearLayout>
 
     </LinearLayout>

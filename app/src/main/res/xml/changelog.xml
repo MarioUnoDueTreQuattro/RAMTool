@@ -3,8 +3,9 @@
     <release
         version="1.02"
         versioncode="1020">
-        <change>Small changes.</change>
+        <change>Added "Clean keeping recents" button.</change>
         <change>Changed icons.</change>
+        <change>Other small changes.</change>
     </release>
     <release
         version="1.01"

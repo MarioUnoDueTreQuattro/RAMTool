@@ -40,6 +40,7 @@
     <string name="Use_Exit_button_to_exit">Use Exit button to exit.</string>
     <string name="Memory_and_Drop_Cache_cleaned">"Memory and Drop Cache cleaned... "</string>
     <string name="Memory_cleaned">"Memory cleaned... "</string>
+    <string name="Memory_cleaned_keeping_recents">"Memory and Drop Cache cleaned keeping recents... "</string>
     <string name="Launched_RAMTool_background_service">Launched RAMTool background service to update notification...</string>
     <string name="Maximum_ZRAM_usage">"Maximum ZRAM usage: "</string>
     <string name="Total_size_all_disks">"Total size (all disks): "</string>
@@ -70,5 +71,6 @@
     <string name="screen_off">Screen OFF: going to sleep...</string>
     <string name="screen_on">Screen ON: waking up...</string>
     <string name="not_kill">"DON'T KILL "</string>
+    <string name="clean_keeping_recents">Clean keeping recents</string>
 
 </resources>
