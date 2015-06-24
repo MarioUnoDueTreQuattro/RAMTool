@@ -20,6 +20,7 @@ import java.util.List;
  */
 public class NotificationService extends Service {
     private static final String TAG = NotificationService.class.getSimpleName();
+    private static String sDrawable = "mb";
     private Updater updater;
     public boolean bIsRunning = false;
     static public int iRefreshFrequency;
@@ -162,14 +163,14 @@ public class NotificationService extends Service {
             //RAMToolApp.updateRAMStatus();
             iZRAMUsage = RAMToolApp.iZRAMUsage;
             iMaximumZRAMUsage = RAMToolApp.iZRAMMaximumUsage;
-            NotificationCompat.Builder appLaunch = new NotificationCompat.Builder(this);
-            String sDrawable = "mb";
+            sDrawable = "mb";
             iDrawable = RAMToolApp.iTotalFreeMemory / 5;
             if (iDrawable==iLastNotificationDrawable) return;
             iLastNotificationDrawable=iDrawable;
             sDrawable += iDrawable;
             int drawableResourceId = this.getResources().getIdentifier(sDrawable, "drawable", this.getPackageName());
             //if (drawableResourceId==0) Log.d(TAG,"drawableResourceId NOT FOUND");
+            NotificationCompat.Builder appLaunch = new NotificationCompat.Builder(this);
             appLaunch.setSmallIcon(drawableResourceId);
 //            appLaunch.setSmallIcon(R.drawable.ic_launcher_48);
             //appLaunch.setContentText("Total Free: " + RAMToolApp.iTotalFreeMemory + " - Free: " + RAMToolApp.iFreeMemory + " - Cached: " + RAMToolApp.iCachedMemory + " - Buffers: " + RAMToolApp.iBuffersMemory);
@@ -200,6 +201,13 @@ public class NotificationService extends Service {
             //RAMToolApp.updateRAMStatus();
             iZRAMUsage = RAMToolApp.iZRAMUsage;
             iMaximumZRAMUsage = RAMToolApp.iZRAMMaximumUsage;
+            sDrawable = "mb";
+            //int iDrawable = (RAMToolApp.iTotalFreeMemory);// / 5) * 5;
+            iDrawable = RAMToolApp.iTotalFreeMemory / 5;
+            if (iDrawable==iLastNotificationDrawable) return;
+            iLastNotificationDrawable=iDrawable;
+            sDrawable += iDrawable;
+            int drawableResourceId = this.getResources().getIdentifier(sDrawable, "drawable", this.getPackageName());
             RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notification_layout);
             //Intent intent = new Intent(this, NotificationView.class);
             // Send data to NotificationView Class
@@ -213,13 +221,6 @@ public class NotificationService extends Service {
             //appLaunch.setLargeIcon(BitmapFactory.decodeResource(res, R.drawable.ic_launcher_96));
             appLaunch.setTicker(getString(R.string.Launched_RAMTool_background_service));
             //appLaunch.setSmallIcon(R.drawable.ic_launcher_48);
-            String sDrawable = "mb";
-            //int iDrawable = (RAMToolApp.iTotalFreeMemory);// / 5) * 5;
-            iDrawable = RAMToolApp.iTotalFreeMemory / 5;
-            if (iDrawable==iLastNotificationDrawable) return;
-            iLastNotificationDrawable=iDrawable;
-            sDrawable += iDrawable;
-            int drawableResourceId = this.getResources().getIdentifier(sDrawable, "drawable", this.getPackageName());
             //if (drawableResourceId==0) Log.d(TAG,"drawableResourceId NOT FOUND");
             appLaunch.setSmallIcon(drawableResourceId);
 /*
