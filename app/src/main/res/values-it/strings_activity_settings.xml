@@ -118,5 +118,6 @@
     <string name="summary_edittext_MemoryLimitToKill">Limite in MB, predefinito 160</string>
     <string name="dialog_title_MemoryLimitToKill">Limite in MB</string>
     <string name="summary_edittext_process_limit">App recenti da non terminare, predefinito 4</string>
+    <string name="needs_root">Richiede ROOT.</string>
 
 </resources>

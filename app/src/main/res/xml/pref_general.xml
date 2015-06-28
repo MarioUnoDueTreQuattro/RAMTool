@@ -35,6 +35,7 @@
         android:defaultValue="false"
         android:dependency="enable_notification"
         android:key="enable_auto_drop_cache"
+        android:summary="@string/needs_root"
         android:title="@string/pref_title_enable_auto_drop_cache"/>
 
     <EditTextPreference
