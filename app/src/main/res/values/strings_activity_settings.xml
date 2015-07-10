@@ -123,5 +123,6 @@
     <string name="title_edittext_process_limit">Don\'t kill recent apps</string>
     <string name="summary_edittext_process_limit">Don\'t kill recent apps, default is 4</string>
     <string name="dialog_title_process_limit">Don\'t kill recent apps</string>
+    <string name="needs_root">Needs ROOT.</string>
 
 </resources>
