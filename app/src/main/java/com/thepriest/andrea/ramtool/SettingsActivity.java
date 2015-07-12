@@ -131,9 +131,9 @@ public class SettingsActivity extends PreferenceActivity {
     @Override
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void onBuildHeaders(List<Header> target) {
-        if (!isSimplePreferences(this)) {
+       // if (!isSimplePreferences(this)) {
             loadHeadersFromResource(R.xml.pref_headers, target);
-        }
+        //}
     }
 
     /**
